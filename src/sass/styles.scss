@@ -1,0 +1,35 @@
+body {
+  background-color: #7FDBFF;
+}
+
+
+@mixin colors($color) {
+  background-color: darken($color, 40%);
+  &.selected{
+    background-color:$color;
+  }
+}
+
+#red,
+#green,
+#yellow,
+#blue {
+  height: 250px;
+  width: 250px;
+}
+
+#red {
+  @include colors(red);
+}
+
+#green {
+  @include colors(green);
+}
+
+#blue {
+  @include colors(blue);
+}
+
+#yellow {
+  @include colors(yellow);
+}
