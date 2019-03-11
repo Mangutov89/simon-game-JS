@@ -7,15 +7,21 @@ $(document).ready(function() {
   function selectColor(color){
     $('.container div').removeClass('selected');
     $(`#${color}`).addClass('selected');
+    console.log(newGame.sequence);
+  }
+
+  function colorLoop() {
+    for (var i = 0 ; i < newGame.sequence.length ; i++) {
+      setInterval(selectColor(newGame.sequence[i]),1000*i);
+    }
   }
 
   $("#start").click(function(){
-    var currentColor=newGame.newColor();
-    selectColor(currentColor)
-    console.log(newGame);
-
+    newGame.newColor();
+    colorLoop();
 
   });
+
   $("#red").click(function(){
     newGame.inputColor("red");
     selectColor("red");

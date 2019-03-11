@@ -2,6 +2,7 @@ export function Simon(){
   this.colors=["red","blue","green","yellow"];
   this.sequence=[];
   this.playerSequence=[];
+  this.playerTurn = false;
 }
 
 Simon.prototype.newColor= function(){

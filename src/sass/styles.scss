@@ -5,6 +5,7 @@ body {
 
 @mixin colors($color) {
   background-color: darken($color, 40%);
+  transition:1s background-color;
   &.selected{
     background-color:$color;
   }
